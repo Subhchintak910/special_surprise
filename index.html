@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <!-- Original Birthday Song - Now only for cake cutting -->
+    <audio id="birthdaySong" src="birthday_song.mp3" preload="auto"></audio>
+
+    <!-- New: BTS Army Song -->
+    <audio id="btsSong" src="bts_song.mp3" preload="auto" loop></audio>
+
+    <!-- Original Music Toggle Button (for Birthday Song, but now hidden by default) -->
+    <button id="musicToggleButton" class="music-toggle-button" style="display: none;">
+        🎶 Cake Song: On
+    </button>
+
+    <!-- New: BTS Music Toggle Button (will be shown only on Page 6) -->
+    <button id="btsMusicToggleButton" class="music-toggle-button bts-music-toggle" style="display: none;">
+        💜 BTS Song: On
+    </button>
+
+    <!-- Page 1: Home Page -->
+    <div class="page active" id="page1">
+        <h1 class="animate-text">Special Surprise for Taniya</h1>
+        <p class="animate-text delay-1">Let's begin your surprise</p>
+        <button class="button animate-button delay-2" onclick="showPage('page2')">Let's Begin</button>
+    </div>
+
+    <!-- Page 2: Birthday Wish -->
+    <div class="page" id="page2">
+        <!-- Sparkle Elements for Page 2 -->
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+
+
+        <h1 class="animate-fade-in">Happy Birthday Taniya!</h1>
+        <p class="animate-wish-text delay-1">Wishing you a day filled with joy, laughter, and all your heart's desires.</p>
+        <div id="confetti-container"></div>
+        <div class="nav-buttons animate-fade-in delay-2">
+            <button class="button" onclick="showPage('page1')">Back</button>
+            <button class="button" onclick="showPage('page3')">Next</button>
+        </div>
+    </div>
+
+
+    <!-- Page 3: Virtual Cake -->
+    <div class="page" id="page3">
+        <h2 class="animate-text">Time for a Cake!</h2>
+        <p class="animate-text delay-1">Click on the cake to cut it!</p>
+        <div id="cake-container" onclick="cutCake()" class="animate-cake">
+            <img id="cake-uncut" src="cake.png" alt="Birthday Cake">
+            <img id="cake-cut" src="cake-cut.png" alt="Cut Birthday Cake">
+            <div class="candle-flame"></div>
+            <div class="candle-flame second-candle"></div>
+        </div>
+        <div class="nav-buttons animate-fade-in delay-2">
+            <button class="button" onclick="showPage('page2')">Back</button>
+            <button class="button" onclick="showPage('page4')">Next</button>
+        </div>
+    </div>
+
+    <!-- Page 4: Gift -->
+    <div class="page" id="page4">
+        <h2 class="animate-text">A Little Gift for You</h2>
+        <div id="gift-container" onclick="openGift()" class="animate-gift">
+            <p>Click on the gift to open it!</p>
+            <img src="gift.png" alt="Gift Box">
+        </div>
+        <div id="teddy-reveal" class="animate-fade-in">
+            <img src="teddy.png" alt="Teddy Bear">
+            <blockquote>Here's a big bear hug for you on your special day! Hope you have a pawsitively amazing birthday!</blockquote>
+        </div>
+        <div class="nav-buttons animate-fade-in delay-2">
+            <button class="button" onclick="showPage('page3')">Back</button>
+            <button class="button" onclick="showPage('page5')">Next</button>
+        </div>
+    </div>
+
+    <!-- Page 5: Memory Gallery -->
+    <div class="page" id="page5">
+        <h2 class="animate-text">Our Memory Gallery</h2>
+        <p class="animate-text delay-1">A few moments to cherish forever.</p>
+        <div id="gallery-grid" class="animate-grid">
+            <img src="gallery1.jpg" alt="Memory 1" class="gallery-item">
+            <img src="gallery2.jpg" alt="Memory 2" class="gallery-item">
+            <img src="gallery3.jpg" alt="Memory 3" class="gallery-item">
+            <img src="gallery4.jpg" alt="Memory 4" class="gallery-item">
+        </div>
+        <div class="nav-buttons animate-fade-in delay-2">
+            <button class="button" onclick="showPage('page4')">Back</button>
+            <button class="button" onclick="showPage('page6')">Next</button>
+        </div>
+    </div>
+
+    <!-- Page 6: BTS Army Section -->
+    <div class="page" id="page6">
+        <h2 class="animate-text">For the biggest BTS Army!</h2>
+        <p class="animate-text delay-1">Click on a name to reveal the picture!</p>
+        <div id="bts-section" class="animate-grid-cards">
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">RM</div>
+                    <div class="flip-card-back"><img src="rm.jpg" alt="RM"></div>
+                </div>
+            </div>
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">Jin</div>
+                    <div class="flip-card-back"><img src="jin.jpg" alt="Jin"></div>
+                </div>
+            </div>
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">Suga</div>
+                    <div class="flip-card-back"><img src="suga.jpg" alt="Suga"></div>
+                </div>
+            </div>
+             <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">J-Hope</div>
+                    <div class="flip-card-back"><img src="jhope.jpg" alt="J-Hope"></div>
+                </div>
+            </div>
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">Jimin</div>
+                    <div class="flip-card-back"><img src="jimin.jpg" alt="Jimin"></div>
+                </div>
+            </div>
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">V</div>
+                    <div class="flip-card-back"><img src="v.jpg" alt="V"></div>
+                </div>
+            </div>
+            <div class="flip-card" onclick="flipCard(this)">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">Jungkook</div>
+                    <div class="flip-card-back"><img src="jungkook.jpg" alt="Jungkook"></div>
+                </div>
+            </div>
+        </div>
+        <div class="nav-buttons animate-fade-in delay-2">
+            <button class="button" onclick="showPage('page5')">Back</button>
+            <button class="button" onclick="showPage('page7')">Next</button>
+        </div>
+    </div>
+
+    <!-- Page 7: Birthday Letter -->
+    <div class="page" id="page7">
+        <h2 class="animate-text">A Letter For You</h2>
+        <div id="letter-content" class="animate-letter">
+            <p><strong>My Dearest Taniya,</strong></p>
+            <p>Aaj ka din sirf tumhara hai, ek aisa din jo tumhari zindagi mein ek nayi roshni lekar aata hai. Har saal ka yeh din ek reminder hota hai ki tum kitni special ho aur tumhari presence se kitne logon ki zindagi roshan hoti hai.</p>
+
+            <p>Chahe waqt aur circumstances kuch bhi ho, meri dil se nikli yeh dua hamesha tumhare liye rahegi — tumhari life khushiyon se bhari ho, tumhe hamesha apne raste par safalta mile aur tumhe kabhi bhi akela feel na karna pade.</p>
+
+            <p>Tumhari muskaan duniya ka sabse khoobsurat gift hai, aur dua hai ki vo muskaan kabhi fade na ho. Har naye din ke saath tumhe ek nayi umeed, ek naya sapna aur ek nayi energy mile. Zindagi tumhe woh sab de jo tum deserve karti ho — sukoon, pyaar, apnapan aur success.</p>
+
+            <p>Jo bhi tumhare dil ke kareeb hai, jo bhi tumhare sapne hain, vo sab tum tak apni khud ki raah bana kar aayen. Kabhi kabhi humari journey humein alag-alag raste par le jati hai, lekin dil se ki gayi dua aur acchhe khayal hamesha apni jagah bana kar rakhte hain.</p>
+
+            <p>Bas yehi dua hai ki tumhari zindagi ek khubsoorat kahani bane jisme sirf khushi ke rang ho, aur tum hamesha apne andar ki positivity aur strength ke saath chamakti raho.</p>
+
+            <p>Happy Birthday once again 🌟🎉
+              Stay blessed, stay happy, stay you.</p>
+
+            <p>With all my love and best wishes,</p>
+            <p><strong>Subhchintak</strong></p>
+        </div>
+        <div class="nav-buttons animate-fade-in delay-2">
+            <button class="button" onclick="showPage('page6')">Back</button>
+            <button class="button" onclick="showPage('page1')">Back to Home</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

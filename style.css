@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fcefe7; /* A base color for fallback */
+    text-align: center;
+    overflow: hidden; /* Important for full-page animations */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+/* Music Toggle Button */
+.music-toggle-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f558b4; /* Pink */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    z-index: 1000; /* Ensure it's above other elements */
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.music-toggle-button:hover {
+    background-color: #e05e9e;
+    transform: scale(1.05);
+}
+
+/* New: BTS Music Toggle Button Style */
+.bts-music-toggle {
+    right: 150px; /* Adjust position to not overlap with the original music button */
+    background-color: #9c27b0; /* A BTS purple */
+}
+.bts-music-toggle:hover {
+    background-color: #7b1fa2;
+}
+
+/* Background Animation */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+.background-animation li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.3); /* Slightly more visible bubbles */
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Subtle glow */
+}
+
+/* Existing li:nth-child rules */
+.background-animation li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+.background-animation li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+.background-animation li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+.background-animation li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+.background-animation li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+.background-animation li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+.background-animation li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+.background-animation li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+.background-animation li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
+.background-animation li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 11s; }
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 50%; /* Keep round */
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.page {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    overflow: hidden; /* Ensure content within page doesn't break layout */
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* Soft text shadow */
+}
+
+.page.active {
+    display: flex;
+    animation: pageFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* Smoother page transition */
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+h1, h2 {
+    font-family: 'Dancing Script', cursive;
+    color: #5e2323;
+    margin-bottom: 10px;
+}
+
+h1 { font-size: 3.8em; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+h2 { font-size: 2.8em; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
+
+p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
+
+.button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    margin: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25); /* More prominent shadow */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    background-color: #ff1493;
+    transform: scale(1.08); /* More noticeable hover scale */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: space-around; /* Changed to space-around for better spacing */
+    width: 90%; /* Wider nav buttons area */
+    max-width: 500px;
+    margin-top: 40px; /* More space */
+    position: relative;
+}
+
+/* General Text & Button Animations (Page 1 & other elements) */
+.animate-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFadeIn 0.8s ease-out forwards;
+}
+.animate-button {
+    opacity: 0;
+    transform: translateY(20px) scale(0.9);
+    animation: slideUpFadeIn 0.8s ease-out forwards;
+}
+/* Delay classes will be set by JS now */
+
+@keyframes slideUpFadeIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Page 2: Birthday Wish specific animations */
+.animate-wish-text {
+    opacity: 0; /* JS will manage visibility and animation */
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid orange; /* The caret */
+    width: 0; /* Start with no width */
+}
+@keyframes typewriter {
+    from { width: 0 }
+    to { width: 100% }
+}
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+}
+
+#confetti-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Allows clicks to pass through */
+    z-index: 5; /* Above page content but below button */
+}
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ffeb3b; /* Yellow */
+    transform-origin: 50% 50%;
+    animation: fall 3s forwards ease-out;
+    opacity: 0; /* Start invisible */
+    border-radius: 2px;
+}
+.confetti:nth-child(2n) { background-color: #ff1493; } /* Pink */
+.confetti:nth-child(3n) { background-color: #8bc34a; } /* Green */
+.confetti:nth-child(4n) { background-color: #2196f3; } /* Blue */
+
+@keyframes fall {
+    0% { transform: translateY(-100px) rotateZ(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    100% { transform: translateY(100vh) rotateZ(720deg); opacity: 0; }
+}
+
+
+/* Page 3: Cake */
+#cake-container {
+    cursor: pointer;
+    position: relative;
+    margin-top: 30px;
+    animation: cakeWobble 4s ease-in-out infinite; /* Cake wobble effect */
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+}
+#cake-uncut { width: 250px; transition: transform 0.3s; }
+#cake-uncut:hover { transform: scale(1.03); } /* Slight hover effect */
+#cake-cut { display: none; width: 250px; animation: cakeCutEffect 0.5s ease-out; }
+
+@keyframes cakeWobble {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-1deg); }
+    75% { transform: rotate(1deg); }
+}
+@keyframes cakeCutEffect {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.candle-flame {
+    position: absolute;
+    top: -15px; /* Adjust based on your cake image */
+    left: 45%; /* Adjust based on your cake image */
+    width: 10px;
+    height: 20px;
+    background-color: #ffcc00; /* Yellow flame base */
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    filter: blur(2px) drop-shadow(0 0 5px orange);
+    animation: flameFlicker 0.8s infinite alternate;
+    z-index: 2; /* Above cake */
+}
+.candle-flame.second-candle {
+    left: 55%; /* Position for a second candle */
+    animation-delay: 0.4s;
+}
+
+@keyframes flameFlicker {
+    0% { transform: scaleY(1); opacity: 1; filter: blur(2px) drop-shadow(0 0 5px orange); }
+    50% { transform: scaleY(0.8) scaleX(1.1); opacity: 0.9; filter: blur(1px) drop-shadow(0 0 7px red); }
+    100% { transform: scaleY(1.1) scaleX(0.9); opacity: 1; filter: blur(2px) drop-shadow(0 0 5px yellow); }
+}
+
+
+/* Page 4: Gift */
+#gift-container {
+    position: relative;
+    cursor: pointer;
+    margin-top: 30px;
+    animation: giftGlow 2s infinite alternate ease-in-out; /* Subtle glow */
+}
+#gift-container img {
+    width: 200px;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+    transition: transform 0.3s;
+}
+#gift-container img:hover { transform: scale(1.05); }
+
+@keyframes giftGlow {
+    from { filter: drop-shadow(0 0 10px #ff69b4); }
+    to { filter: drop-shadow(0 0 20px #ff1493); }
+}
+
+#teddy-reveal {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeInScale 0.8s ease-out forwards;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+#teddy-reveal img {
+    width: 180px;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+}
+#teddy-reveal blockquote {
+    font-style: italic;
+    color: #d6336c;
+    background: #fff0f6;
+    padding: 18px;
+    border-left: 5px solid #ff69b4;
+    border-radius: 8px;
+    margin-top: 20px;
+    max-width: 400px;
+    font-size: 1.1em;
+}
+
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Page 5: Memory Gallery */
+#gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Responsive grid */
+    gap: 20px;
+    margin-top: 30px;
+    max-width: 700px;
+    width: 100%;
+}
+.gallery-item {
+    width: 100%;
+    height: 140px; /* Fixed height for consistency */
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+    opacity: 0; /* Initial state for staggered animation */
+    transform: scale(0.8);
+    animation: galleryItemAppear 0.6s forwards ease-out; /* JS will set delay */
+}
+.gallery-item:hover {
+    transform: scale(1.15) rotate(2deg); /* More dynamic hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    z-index: 10; /* Bring hovered item to front */
+}
+@keyframes galleryItemAppear {
+    from { opacity: 0; transform: scale(0.8) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+
+/* Page 6: BTS */
+#bts-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* More space between cards */
+    perspective: 1000px;
+    margin-top: 30px;
+}
+.flip-card {
+    width: 160px; /* Slightly larger cards */
+    height: 210px;
+    cursor: pointer;
+    /* No initial opacity/transform for staggered animation here, as requested */
+}
+/* No @keyframes cardGridAppear */
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    /* Changed for smoother animation */
+    transition: transform 0.6s ease-in-out; /* Smoother, less bouncy */
+    transform-style: preserve-3d;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* More pronounced shadow */
+    border-radius: 12px; /* Slightly rounder corners */
+}
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Padding for text inside */
+    box-sizing: border-box;
+}
+.flip-card-front {
+    background: linear-gradient(135deg, #a8c0ff, #3f2b96); /* Cooler gradient */
+    color: white;
+    font-size: 1.6em;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.flip-card-back {
+    background-color: #f8f8f8;
+    transform: rotateY(180deg);
+}
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Page 7: Letter */
+#letter-content {
+    background: linear-gradient(to bottom, #fffaf0 0%, #fff0e0 100%); /* Soft paper gradient */
+    padding: 35px;
+    border-radius: 20px; /* More rounded */
+    max-width: 650px;
+    text-align: left;
+    overflow-y: auto;
+    max-height: 75vh; /* Allow more height */
+    line-height: 1.7; /* Better readability */
+    color: #444;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15); /* Stronger shadow */
+    position: relative; /* For pseudo-elements */
+    border: 1px solid #ffe0b2; /* Subtle border */
+}
+#letter-content p {
+    margin-bottom: 1em; /* Space between paragraphs */
+    opacity: 0; /* Initial state for fade-in */
+    transform: translateY(10px);
+    animation: letterFadeIn 0.8s forwards ease-out; /* JS will set delay */
+}
+#letter-content p strong {
+    color: #d6336c; /* Highlight names */
+}
+
+/* Pseudo-elements for a folded paper effect */
+#letter-content::before, #letter-content::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 20px; /* Simulate fold */
+    left: 0;
+    background: rgba(0,0,0,0.05); /* Shadow for fold */
+    pointer-events: none;
+    z-index: 1;
+}
+#letter-content::before {
+    top: 0;
+    border-radius: 20px 20px 0 0;
+    transform: translateY(-10px);
+}
+#letter-content::after {
+    bottom: 0;
+    border-radius: 0 0 20px 20px;
+    transform: translateY(10px);
+}
+
+@keyframes letterFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8em; }
+    h2 { font-size: 2em; }
+    p { font-size: 1em; }
+    .button { padding: 12px 25px; font-size: 1em; }
+    .nav-buttons { width: 95%; max-width: none; }
+    #cake-container img { width: 180px; }
+    #gift-container img { width: 180px; }
+    #teddy-reveal img { width: 150px; }
+    #gallery-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; }
+    .gallery-item { height: 100px; border-radius: 10px; }
+    .flip-card { width: 120px; height: 160px; }
+    .flip-card-front { font-size: 1.2em; }
+    #letter-content { padding: 20px; max-height: 80vh; border-radius: 10px; }
+}
