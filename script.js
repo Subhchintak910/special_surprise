@@ -79,8 +79,8 @@ function resetAnimations(pageElement) {
     const animatedElements = pageElement.querySelectorAll('.animate-text, .animate-button, .animate-wish-text, .animate-cake, .animate-gift, .gallery-item, .animate-letter p, .animate-fade-in');
     animatedElements.forEach(el => {
         el.style.animation = 'none';
-        el.offsetHeight;
-        el.style.animation = null;
+        el.offsetHeight; // Trigger reflow to apply 'none'
+        el.style.animation = null; // Clear animation property for re-application
 
         if (el.classList.contains('animate-text') || el.classList.contains('animate-button') || el.classList.contains('animate-fade-in')) {
             el.style.opacity = '0';
@@ -116,7 +116,7 @@ function resetAnimations(pageElement) {
     }
 
     const giftContainer = pageElement.querySelector('#gift-container');
-    const teddyReveal = pageElement.querySelector('#teddy-reveal');
+    const teddyReveal = document.getElementById('teddy-reveal'); // Assuming teddyReveal is always in body or correct page
     if (giftContainer && teddyReveal) {
         giftContainer.style.display = 'block';
         teddyReveal.style.display = 'none';

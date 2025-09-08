@@ -28,15 +28,19 @@
     <!-- New: BTS Army Song -->
     <audio id="btsSong" src="bts_song.mp3" preload="auto" loop></audio>
 
-    <!-- Original Music Toggle Button (for Birthday Song, but now hidden by default) -->
-    <button id="musicToggleButton" class="music-toggle-button" style="display: none;">
-        🎶 Cake Song: On
-    </button>
+    <!-- Music Toggle Buttons Container (New: for better positioning) -->
+    <div class="music-buttons-container">
+        <!-- Original Music Toggle Button (for Birthday Song, but now hidden by default) -->
+        <button id="musicToggleButton" class="music-toggle-button" style="display: none;">
+            🎶 Cake Song: On
+        </button>
 
-    <!-- New: BTS Music Toggle Button (will be shown only on Page 6) -->
-    <button id="btsMusicToggleButton" class="music-toggle-button bts-music-toggle" style="display: none;">
-        💜 BTS Song: On
-    </button>
+        <!-- New: BTS Music Toggle Button (will be shown only on Page 6) -->
+        <button id="btsMusicToggleButton" class="music-toggle-button bts-music-toggle" style="display: none;">
+            💜 BTS Song: On
+        </button>
+    </div>
+
 
     <!-- Page 1: Home Page -->
     <div class="page active" id="page1">
@@ -118,6 +122,13 @@
             <img src="gallery2.jpg" alt="Memory 2" class="gallery-item">
             <img src="gallery3.jpg" alt="Memory 3" class="gallery-item">
             <img src="gallery4.jpg" alt="Memory 4" class="gallery-item">
+            <!-- New: Placeholder for more gallery items -->
+            <img src="gallery_placeholder.jpg" alt="Memory 5" class="gallery-item placeholder-item">
+            <img src="gallery_placeholder.jpg" alt="Memory 6" class="gallery-item placeholder-item">
+            <img src="gallery_placeholder.jpg" alt="Memory 7" class="gallery-item placeholder-item">
+            <img src="gallery_placeholder.jpg" alt="Memory 8" class="gallery-item placeholder-item">
+            <img src="gallery_placeholder.jpg" alt="Memory 9" class="gallery-item placeholder-item">
+            <img src="gallery_placeholder.jpg" alt="Memory 10" class="gallery-item placeholder-item">
         </div>
         <div class="nav-buttons animate-fade-in delay-2">
             <button class="button" onclick="showPage('page4')">Back</button>

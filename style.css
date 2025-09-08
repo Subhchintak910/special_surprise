@@ -14,11 +14,22 @@ body {
     position: relative;
 }
 
-/* Music Toggle Button */
-.music-toggle-button {
+/* New: Music Toggle Buttons Container */
+.music-buttons-container {
     position: fixed;
     top: 20px;
     right: 20px;
+    z-index: 1000;
+    display: flex; /* Arrange buttons horizontally */
+    gap: 10px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: flex-end; /* Align to the right */
+    max-width: calc(100% - 40px); /* Prevent overflow on small screens */
+}
+
+/* Music Toggle Button */
+.music-toggle-button {
+    /* Removed 'position: fixed; top; right;' from here, now managed by container */
     background-color: #f558b4; /* Pink */
     color: white;
     border: none;
@@ -26,9 +37,9 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
-    z-index: 1000; /* Ensure it's above other elements */
     transition: background-color 0.3s, transform 0.3s;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    white-space: nowrap; /* Prevent text from wrapping inside button */
 }
 .music-toggle-button:hover {
     background-color: #e05e9e;
@@ -37,7 +48,7 @@ body {
 
 /* New: BTS Music Toggle Button Style */
 .bts-music-toggle {
-    right: 150px; /* Adjust position to not overlap with the original music button */
+    /* right: 150px; // Removed, now managed by flexbox gap */
     background-color: #9c27b0; /* A BTS purple */
 }
 .bts-music-toggle:hover {
@@ -327,15 +338,18 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 /* Page 5: Memory Gallery */
 #gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); /* Responsive grid */
-    gap: 20px;
+    /* Adjusted for more flexibility with more items */
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px; /* Slightly reduced gap for more items */
     margin-top: 30px;
-    max-width: 700px;
+    max-width: 800px; /* Increased max-width for more items */
     width: 100%;
+    padding: 0 10px; /* Add some padding on sides for smaller screens */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 .gallery-item {
     width: 100%;
-    height: 140px; /* Fixed height for consistency */
+    height: 120px; /* Fixed height for consistency */
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.25);
@@ -349,6 +363,27 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     z-index: 10; /* Bring hovered item to front */
 }
+/* New style for placeholder items - visually distinct */
+.gallery-item.placeholder-item {
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    color: #888;
+    text-align: center;
+    border-style: dashed;
+    border-color: #ccc;
+    border-width: 2px;
+}
+.gallery-item.placeholder-item::before {
+    content: "Add Photo Here";
+}
+/* Hide actual image for placeholders until you add them */
+.gallery-item.placeholder-item img {
+    display: none;
+}
+
 @keyframes galleryItemAppear {
     from { opacity: 0; transform: scale(0.8) translateY(20px); }
     to { opacity: 1; transform: scale(1) translateY(0); }
@@ -360,15 +395,19 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 25px; /* More space between cards */
+    gap: 15px; /* Adjusted gap for better mobile spacing */
     perspective: 1000px;
     margin-top: 30px;
+    max-width: 90%; /* Limit width to prevent overflow on small screens */
+    padding: 0 10px; /* Padding for mobile */
+    box-sizing: border-box;
 }
 .flip-card {
-    width: 160px; /* Slightly larger cards */
-    height: 210px;
+    width: 130px; /* Adjusted width for mobile responsiveness */
+    height: 170px; /* Adjusted height for mobile responsiveness */
     cursor: pointer;
-    /* No initial opacity/transform for staggered animation here, as requested */
+    flex-shrink: 0; /* Prevent cards from shrinking too much */
+    margin-bottom: 10px; /* Add some margin for vertical spacing */
 }
 /* No @keyframes cardGridAppear */
 
@@ -481,7 +520,30 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     #teddy-reveal img { width: 150px; }
     #gallery-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; }
     .gallery-item { height: 100px; border-radius: 10px; }
-    .flip-card { width: 120px; height: 160px; }
-    .flip-card-front { font-size: 1.2em; }
+    .flip-card { width: 100px; height: 140px; } /* Further adjust for very small screens */
+    .flip-card-front { font-size: 1em; } /* Smaller font for card names */
     #letter-content { padding: 20px; max-height: 80vh; border-radius: 10px; }
+
+    /* Adjust music buttons for smaller screens */
+    .music-buttons-container {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: flex-end; /* Align stacked buttons to the right */
+        right: 10px;
+        top: 10px;
+        gap: 5px; /* Smaller gap when stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.5em; }
+    p { font-size: 0.9em; }
+    .button { padding: 10px 20px; font-size: 0.9em; }
+    #cake-container img, #cake-cut { width: 150px; }
+    #gift-container img { width: 150px; }
+    #teddy-reveal img { width: 120px; }
+    #gallery-grid { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 8px; }
+    .gallery-item { height: 80px; }
+    .flip-card { width: 85px; height: 110px; } /* Even smaller for very small phones */
+    .flip-card-front { font-size: 0.9em; }
 }
