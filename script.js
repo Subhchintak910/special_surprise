@@ -1,6 +1,7 @@
 let currentPage = 'page1';
 let birthdayMusicPlaying = false; // Separate flag for birthday song
 let btsMusicPlaying = false;      // Separate flag for BTS song
+let btsMusicManuallyStopped = false; // Flag to track if BTS music was stopped manually
 
 // New: To track UNIQUE flipped BTS cards (by their inner text like "RM", "Jin")
 let seenBTSMembers = new Set();
@@ -57,18 +58,21 @@ btsMusicToggleButton.addEventListener('click', function() {
         btsSong.play()
             .then(() => {
                 btsMusicPlaying = true;
+                btsMusicManuallyStopped = false; // Reset if user explicitly plays it
                 updateBtsMusicButtonText();
                 console.log("BTS song started playing on Page 6!");
             })
             .catch(error => {
                 console.error("Autoplay prevented for BTS song on button click:", error);
                 btsMusicPlaying = false;
+                btsMusicManuallyStopped = false; // If autoplay failed, it wasn't manually stopped
                 updateBtsMusicButtonText();
                 // alert("Music playback requires user interaction. Please click the '💜 BTS Song: Off' button to enable it."); // Removed alert
             });
     } else {
         btsSong.pause();
         btsMusicPlaying = false;
+        btsMusicManuallyStopped = true; // Set flag when user manually stops it
         updateBtsMusicButtonText();
     }
 });
@@ -168,7 +172,16 @@ function showPage(pageId) {
     // Handle BTS song
     if (pageId === 'page6' || pageId === 'page7') { // BTS song plays from page 6 till end
         btsMusicToggleButton.style.display = 'block'; // Show BTS song button
-        if (!btsMusicPlaying) { // Only attempt to play if not already playing
+        
+        // New: Reset btsMusicManuallyStopped when entering page 6 or 7
+        // This ensures autoplay restarts on re-entry to these pages
+        if (currentPage !== 'page6' && currentPage !== 'page7') { // Only reset if coming from a non-BTS page
+             btsMusicManuallyStopped = false;
+        }
+
+
+        // Only attempt to play if not already playing AND not manually stopped
+        if (!btsMusicPlaying && !btsMusicManuallyStopped) {
             btsSong.play()
                 .then(() => {
                     btsMusicPlaying = true;
