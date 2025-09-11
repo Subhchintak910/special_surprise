@@ -29,7 +29,6 @@ body {
 
 /* Music Toggle Button */
 .music-toggle-button {
-    /* Removed 'position: fixed; top; right;' from here, now managed by container */
     background-color: #f558b4; /* Pink */
     color: white;
     border: none;
@@ -48,7 +47,6 @@ body {
 
 /* New: BTS Music Toggle Button Style */
 .bts-music-toggle {
-    /* right: 150px; // Removed, now managed by flexbox gap */
     background-color: #9c27b0; /* A BTS purple */
 }
 .bts-music-toggle:hover {
@@ -169,7 +167,9 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     width: 90%; /* Wider nav buttons area */
     max-width: 500px;
     margin-top: 40px; /* More space */
-    position: relative;
+    position: relative; /* Keep relative */
+    z-index: 10; /* Ensure navigation buttons are above general page content */
+    padding-bottom: 10px; /* Add some padding below the buttons themselves */
 }
 
 /* General Text & Button Animations (Page 1 & other elements) */
@@ -409,14 +409,12 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     flex-shrink: 0; /* Prevent cards from shrinking too much */
     margin-bottom: 10px; /* Add some margin for vertical spacing */
 }
-/* No @keyframes cardGridAppear */
 
 .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-    /* Changed for smoother animation */
     transition: transform 0.6s ease-in-out; /* Smoother, less bouncy */
     transform-style: preserve-3d;
     box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* More pronounced shadow */
@@ -464,7 +462,9 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     max-width: 650px;
     text-align: left;
     overflow-y: auto;
-    max-height: 75vh; /* Allow more height */
+    /* Adjust max-height and margin-bottom for better flow on all screens */
+    max-height: 75vh;
+    margin-bottom: 100px; /* Increased margin for navigation buttons below */
     line-height: 1.7; /* Better readability */
     color: #444;
     box-shadow: 0 8px 30px rgba(0,0,0,0.15); /* Stronger shadow */
@@ -514,7 +514,12 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     h2 { font-size: 2em; }
     p { font-size: 1em; }
     .button { padding: 12px 25px; font-size: 1em; }
-    .nav-buttons { width: 95%; max-width: none; }
+    .nav-buttons {
+        width: 95%;
+        max-width: none;
+        margin-top: 30px; /* Slightly less margin when screen is smaller */
+        padding-bottom: 5px; /* Adjust padding for smaller screens */
+    }
     #cake-container img { width: 180px; }
     #gift-container img { width: 180px; }
     #teddy-reveal img { width: 150px; }
@@ -522,7 +527,12 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     .gallery-item { height: 100px; border-radius: 10px; }
     .flip-card { width: 100px; height: 140px; } /* Further adjust for very small screens */
     .flip-card-front { font-size: 1em; } /* Smaller font for card names */
-    #letter-content { padding: 20px; max-height: 80vh; border-radius: 10px; }
+    #letter-content {
+        padding: 20px;
+        /* Calculate max-height based on available viewport, accounting for other elements */
+        max-height: calc(100vh - 220px); /* 100vh minus header/h2 + nav + some buffer */
+        margin-bottom: 80px; /* Ensure space for nav buttons */
+    }
 
     /* Adjust music buttons for smaller screens */
     .music-buttons-container {
@@ -546,4 +556,9 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     .gallery-item { height: 80px; }
     .flip-card { width: 85px; height: 110px; } /* Even smaller for very small phones */
     .flip-card-front { font-size: 0.9em; }
+    #letter-content {
+        padding: 15px;
+        max-height: calc(100vh - 200px); /* Adjusted for even smaller screens */
+        margin-bottom: 70px; /* Ensure space for nav buttons */
+    }
 }
