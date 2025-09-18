@@ -544,6 +544,11 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     }
 }
 
+#letter-body {
+    font-style: justify;
+    font-style: italic;
+    font-family: "Comic Sans MS", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 @media (max-width: 480px) {
     h1 { font-size: 2em; }
     h2 { font-size: 1.5em; }
