@@ -339,10 +339,11 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 /* Page 5: Memory Gallery */
 #gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    grid-template-columns: repeat(3, minmax(120px, 1fr));
     gap: 15px;
     margin-top: 30px;
-    max-width: 800px;
+    max-width: 500px;
+    max-height: 900px; /* Limit height */
     width: 100%;
     padding: 0;
     overflow: visible; /* ensure lift is visible */
@@ -351,7 +352,7 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 }
 
 #gallery-grid img {
-    width: 100%;
+    width: 90%;
     display: block;
     border-radius: 10px;
     cursor: pointer;
@@ -398,6 +399,35 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 @keyframes galleryItemAppear {
     from { opacity: 0; transform: scale(0.8) translateY(20px); }
     to { opacity: 1; transform: scale(1) translateY(0); }
+}
+/* Lightbox Overlay */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Lightbox Image */
+#lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(222, 2, 222, 0.822);
+    animation: zoomIn 0.5s ease;
+    object-fit: contain; /* image proportion maintain */
+}
+
+/* Zoom animation */
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
 }
 
 

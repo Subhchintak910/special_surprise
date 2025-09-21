@@ -435,3 +435,21 @@ function generateConfetti() {
          setTimeout(() => confettiContainer.innerHTML = '', 3000); // Clear confetti after 3 seconds
     }
 }
+
+// Select all gallery images
+const galleryImages = document.querySelectorAll('#gallery-grid img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+// On click, show lightbox with clicked image
+galleryImages.forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src; // same image source
+    lightbox.style.display = 'flex';
+  });
+});
+
+// Click outside to close lightbox
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
