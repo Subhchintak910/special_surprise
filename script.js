@@ -104,6 +104,27 @@ function resetAnimations(pageElement) {
             el.style.transform = 'translateY(10px)';
         }
     });
+    // JS for click-to-enlarge
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("modalImg");
+        const closeModal = document.getElementById("closeModal");
+
+        document.querySelectorAll("#gallery-grid img").forEach(img => {
+            img.addEventListener("click", () => {
+                modal.style.display = "flex"; // show modal
+                modalImg.src = img.src;       // set clicked image
+            });
+        });
+
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";     // close modal
+        });
+
+        // click outside image to close modal
+        modal.addEventListener("click", (e) => {
+            if(e.target === modal) modal.style.display = "none";
+        });
+
 
     const confettiContainer = pageElement.querySelector('#confetti-container');
     if (confettiContainer) {
