@@ -485,7 +485,7 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     text-align: left;
     overflow-y: auto;
     /* Adjust max-height and margin-bottom for better flow on all screens */
-    max-height: 55vh;
+    max-height: 45vh;
     margin-bottom: 100px; /* Increased margin for navigation buttons below */
     line-height: 1.6; /* Better readability */
     color: #444;
