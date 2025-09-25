@@ -504,19 +504,19 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 
 /* Page 7: Letter */
 #letter-content {
-    background: linear-gradient(to bottom, #fffaf0 0%, #fff0e0 100%); /* Soft paper gradient */
+    background: linear-gradient(to bottom, #12f5f5 10%, #05e76b 100%); /* Soft paper gradient */
     padding: 35px;
     border-radius: 16px; /* More rounded */
     max-width: 550px;
     width: 90%; /* Responsive width */
     margin: 20px auto; /* Centered with margin */
-    padding: 17px; /* Reduced padding for smaller screens */
+    padding: 10px; /* Reduced padding for smaller screens */
     font-size: 18px; /* Slightly smaller font for better fit */
     text-align: left;
     overflow-y: auto;
     /* Adjust max-height and margin-bottom for better flow on all screens */
     max-height: 55vh;
-    margin-bottom: 100px; /* Increased margin for navigation buttons below */
+    margin-bottom: 10px; /* Increased margin for navigation buttons below */
     line-height: 1.6; /* Better readability */
     color: #444;
     box-shadow: 0 8px 30px rgba(0,0,0,0.15); /* Stronger shadow */
@@ -580,10 +580,10 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     .flip-card { width: 100px; height: 140px; } /* Further adjust for very small screens */
     .flip-card-front { font-size: 1em; } /* Smaller font for card names */
     #letter-content {
-        padding: 20px;
+        padding: 10px;
         /* Calculate max-height based on available viewport, accounting for other elements */
-        max-height: calc(100vh - 220px); /* 100vh minus header/h2 + nav + some buffer */
-        margin-bottom: 80px; /* Ensure space for nav buttons */
+        max-height: calc(80vh - 160px); /* 100vh minus header/h2 + nav + some buffer */
+        margin-bottom: 5px; /* Ensure space for nav buttons */
     }
 
     /* Adjust music buttons for smaller screens */
