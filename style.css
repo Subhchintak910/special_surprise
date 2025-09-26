@@ -515,8 +515,8 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     text-align: left;
     overflow-y: auto;
     /* Adjust max-height and margin-bottom for better flow on all screens */
-    max-height: 55vh;
-    margin-bottom: 10px; /* Increased margin for navigation buttons below */
+    max-height: 45vh;
+    margin-bottom: 5px; /* Increased margin for navigation buttons below */
     line-height: 1.6; /* Better readability */
     color: #444;
     box-shadow: 0 8px 30px rgba(0,0,0,0.15); /* Stronger shadow */
@@ -569,8 +569,8 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     .nav-buttons {
         width: 95%;
         max-width: none;
-        margin-top: 30px; /* Slightly less margin when screen is smaller */
-        padding-bottom: 5px; /* Adjust padding for smaller screens */
+        margin-top: 25px; /* Slightly less margin when screen is smaller */
+        padding-bottom: 3px; /* Adjust padding for smaller screens */
     }
     #cake-container img { width: 180px; }
     #gift-container img { width: 180px; }
@@ -580,7 +580,7 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     .flip-card { width: 100px; height: 140px; } /* Further adjust for very small screens */
     .flip-card-front { font-size: 1em; } /* Smaller font for card names */
     #letter-content {
-        padding: 10px;
+        padding: 1px;
         /* Calculate max-height based on available viewport, accounting for other elements */
         max-height: calc(40vh - 10px); /* 100vh minus header/h2 + nav + some buffer */
         margin-bottom: 0px; /* Ensure space for nav buttons */
@@ -615,7 +615,7 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     .flip-card-front { font-size: 0.9em; }
     #letter-content {
         padding: 15px;
-        max-height: calc(100vh - 200px); /* Adjusted for even smaller screens */
-        margin-bottom: 70px; /* Ensure space for nav buttons */
+        max-height: calc(40vh - 10px); /* Adjusted for even smaller screens */
+        margin-bottom: 0px; /* Ensure space for nav buttons */
     }
 }
