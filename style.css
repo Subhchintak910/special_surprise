@@ -504,7 +504,7 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 
 /* Page 7: Letter */
 #letter-content {
-    background: linear-gradient(to bottom, #12f5f5 10%, #05e76b 100%); /* Soft paper gradient */
+    background: linear-gradient(to bottom, #04f8f8d9 10%, #4be877 100%); /* Soft paper gradient */
     padding: 35px;
     border-radius: 16px; /* More rounded */
     max-width: 550px;
@@ -575,7 +575,7 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     #cake-container img { width: 180px; }
     #gift-container img { width: 180px; }
     #teddy-reveal img { width: 150px; }
-    #gallery-grid { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; }
+    #gallery-grid { grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 8px; }
     .gallery-item { height: 100px; border-radius: 10px; }
     .flip-card { width: 100px; height: 140px; } /* Further adjust for very small screens */
     .flip-card-front { font-size: 1em; } /* Smaller font for card names */
@@ -609,7 +609,7 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     #cake-container img, #cake-cut { width: 150px; }
     #gift-container img { width: 150px; }
     #teddy-reveal img { width: 120px; }
-    #gallery-grid { grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); gap: 8px; }
+    #gallery-grid { grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 8px; }
     .gallery-item { height: 80px; }
     .flip-card { width: 85px; height: 110px; } /* Even smaller for very small phones */
     .flip-card-front { font-size: 0.9em; }
