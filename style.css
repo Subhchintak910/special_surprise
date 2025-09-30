@@ -504,7 +504,7 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 
 /* Page 7: Letter */
 #letter-content {
-    background: linear-gradient(to bottom, #04f8f8d9 10%, #4be877 100%); /* Soft paper gradient */
+    background: linear-gradient(to bottom, #fff0fd 50%, #e9b5e2 100%); /* Soft paper gradient */
     padding: 35px;
     border-radius: 16px; /* More rounded */
     max-width: 550px;
