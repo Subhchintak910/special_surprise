@@ -32,7 +32,7 @@ function updateBtsMusicButtonText() {
 }
 
 // Toggle birthday music on/off (if it's ever needed, currently not auto-displayed)
-musicToggleButton.addEventListener('click', function() {
+musicToggleButton.addEventListener('click', function () {
     if (birthdaySong.paused) {
         birthdaySong.play()
             .then(() => {
@@ -53,7 +53,7 @@ musicToggleButton.addEventListener('click', function() {
 });
 
 // New: Toggle BTS music on/off when its button is clicked
-btsMusicToggleButton.addEventListener('click', function() {
+btsMusicToggleButton.addEventListener('click', function () {
     if (btsSong.paused) {
         btsSong.play()
             .then(() => {
@@ -97,33 +97,33 @@ function resetAnimations(pageElement) {
             el.style.borderRightColor = 'transparent';
             el.style.opacity = '0';
         } else if (el.classList.contains('gallery-item')) {
-             el.style.opacity = '0';
-             el.style.transform = 'scale(0.8) translateY(20px)';
+            el.style.opacity = '0';
+            el.style.transform = 'scale(0.8) translateY(20px)';
         } else if (el.tagName === 'P' && el.closest('#letter-content')) {
             el.style.opacity = '0';
             el.style.transform = 'translateY(10px)';
         }
     });
     // JS for click-to-enlarge
-        const modal = document.getElementById("myModal");
-        const modalImg = document.getElementById("modalImg");
-        const closeModal = document.getElementById("closeModal");
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("modalImg");
+    const closeModal = document.getElementById("closeModal");
 
-        document.querySelectorAll("#gallery-grid img").forEach(img => {
-            img.addEventListener("click", () => {
-                modal.style.display = "flex"; // show modal
-                modalImg.src = img.src;       // set clicked image
-            });
+    document.querySelectorAll("#gallery-grid img").forEach(img => {
+        img.addEventListener("click", () => {
+            modal.style.display = "flex"; // show modal
+            modalImg.src = img.src;       // set clicked image
         });
+    });
 
-        closeModal.addEventListener("click", () => {
-            modal.style.display = "none";     // close modal
-        });
+    closeModal.addEventListener("click", () => {
+        modal.style.display = "none";     // close modal
+    });
 
-        // click outside image to close modal
-        modal.addEventListener("click", (e) => {
-            if(e.target === modal) modal.style.display = "none";
-        });
+    // click outside image to close modal
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) modal.style.display = "none";
+    });
 
 
     const confettiContainer = pageElement.querySelector('#confetti-container');
@@ -193,11 +193,11 @@ function showPage(pageId) {
     // Handle BTS song
     if (pageId === 'page6' || pageId === 'page7') { // BTS song plays from page 6 till end
         btsMusicToggleButton.style.display = 'block'; // Show BTS song button
-        
+
         // New: Reset btsMusicManuallyStopped when entering page 6 or 7
         // This ensures autoplay restarts on re-entry to these pages
         if (currentPage !== 'page6' && currentPage !== 'page7') { // Only reset if coming from a non-BTS page
-             btsMusicManuallyStopped = false;
+            btsMusicManuallyStopped = false;
         }
 
 
@@ -253,11 +253,11 @@ function triggerPageAnimations(pageElement) {
 
     const animateFadeIns = pageElement.querySelectorAll('.animate-fade-in');
     animateFadeIns.forEach((el, index) => {
-         el.style.animation = 'none';
-         el.offsetHeight;
-         const baseDelay = (animatedTexts.length + animatedButtons.length) * 0.1 + 0.1;
-         el.style.animationDelay = `${baseDelay + index * 0.1}s`;
-         el.style.animation = 'pageFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+        el.style.animation = 'none';
+        el.offsetHeight;
+        const baseDelay = (animatedTexts.length + animatedButtons.length) * 0.1 + 0.1;
+        el.style.animationDelay = `${baseDelay + index * 0.1}s`;
+        el.style.animation = 'pageFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
     });
 
 
@@ -266,20 +266,27 @@ function triggerPageAnimations(pageElement) {
         if (wishText) {
             wishText.style.animation = 'none';
             wishText.offsetHeight;
-            wishText.style.width = '0';
-            wishText.style.borderRightColor = 'orange';
-            wishText.style.opacity = '1';
-            wishText.style.animation = 'typewriter 2s steps(22) forwards, blink-caret 0.75s step-end infinite';
+            wishText.style.animation = 'bounceZoom 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards';
+            wishText.style.animationDelay = '0.5s';
         }
+
+        // Randomize sparkles
+        const sparkles = pageElement.querySelectorAll('.sparkle');
+        sparkles.forEach(sparkle => {
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+        });
+
         generateConfetti();
     }
 
     if (pageElement.id === 'page3') {
         const cakeContainer = pageElement.querySelector('#cake-container');
         if (cakeContainer) {
-             cakeContainer.style.animation = 'none';
-             cakeContainer.offsetHeight;
-             cakeContainer.style.animation = 'cakeWobble 4s ease-in-out infinite';
+            cakeContainer.style.animation = 'none';
+            cakeContainer.offsetHeight;
+            cakeContainer.style.animation = 'cakeWobble 4s ease-in-out infinite';
         }
         const candleFlames = pageElement.querySelectorAll('.candle-flame');
         candleFlames.forEach(flame => flame.style.display = 'block');
@@ -329,6 +336,18 @@ function cutCake() {
         cakeCut.style.display = 'block';
         candleFlames.forEach(flame => flame.style.display = 'none');
 
+        // Sparkle / Firework effect for cake cutting
+        if (typeof confetti !== 'undefined') {
+            var defaults = { spread: 360, ticks: 50, gravity: 0, decay: 0.94, startVelocity: 30, colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8'] };
+            function shoot() {
+                confetti({ ...defaults, particleCount: 40, scalar: 1.2, shapes: ['star'] });
+                confetti({ ...defaults, particleCount: 10, scalar: 0.75, shapes: ['circle'] });
+            }
+            setTimeout(shoot, 0);
+            setTimeout(shoot, 100);
+            setTimeout(shoot, 200);
+        }
+
         // Play birthday song when cake is cut
         if (birthdaySong.paused) {
             birthdaySong.play()
@@ -353,8 +372,22 @@ function openGift() {
     const teddyReveal = document.getElementById('teddy-reveal');
 
     if (giftContainer && teddyReveal) {
-        giftContainer.style.display = 'none';
-        teddyReveal.style.display = 'flex';
+        // Add shake animation
+        giftContainer.classList.add('shake-animation');
+
+        // Wait for shake to finish, then reveal teddy
+        setTimeout(() => {
+            giftContainer.classList.remove('shake-animation');
+            giftContainer.style.display = 'none';
+            teddyReveal.style.display = 'flex';
+
+            // Fire hearts confetti
+            if (typeof confetti !== 'undefined') {
+                var defaults = { spread: 360, ticks: 100, gravity: 0, decay: 0.94, startVelocity: 30, shapes: ['heart'] };
+                confetti({ ...defaults, particleCount: 50, scalar: 2, colors: ['#FF1493', '#FF69B4', '#FFC0CB'] });
+                confetti({ ...defaults, particleCount: 25, scalar: 1.5, colors: ['#FF1493', '#FF69B4', '#FFC0CB'] });
+            }
+        }, 600);
     }
 }
 
@@ -392,8 +425,16 @@ function flipCard(cardElement) {
                 // Ensure all cards are flipped (revealed)
                 card.classList.add('flipped');
             });
-            // seenBTSMembers.clear(); // If you want to allow re-discovering members after full reveal
-            // alert("आपने सभी BTS सदस्यों को देख लिया है! अब सभी कार्ड पलट गए हैं।"); // <--- यह लाइन हटा दी गई है
+            
+            // Trigger Galaxy Mode and show Neon text!
+            const page6 = document.getElementById('page6');
+            if (page6) {
+                page6.classList.add('galaxy-mode');
+            }
+            const armyText = document.getElementById('army-forever-text');
+            if (armyText) {
+                armyText.style.display = 'block';
+            }
         }, 1000); // 1 second delay
     }
 }
@@ -410,29 +451,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function generateConfetti() {
-    console.log("Confetti generated! (If confetti library is included and configured)");
-    const confettiContainer = document.getElementById('confetti-container');
-    // Using a simple CSS-based confetti fallback if 'confetti' library is not available
-    if (confettiContainer && typeof confetti !== 'undefined') {
-        confetti({
-            particleCount: 100,
-            spread: 70,
-            origin: { y: 0.6 }
-        });
-    } else if (confettiContainer) {
-        // Fallback CSS confetti (simplified)
-        confettiContainer.innerHTML = `
-            <div class="confetti" style="left: 10%; background-color: red; animation-delay: 0s;"></div>
-            <div class="confetti" style="left: 20%; background-color: blue; animation-delay: 0.2s;"></div>
-            <div class="confetti" style="left: 30%; background-color: green; animation-delay: 0.4s;"></div>
-            <div class="confetti" style="left: 40%; background-color: yellow; animation-delay: 0.6s;"></div>
-            <div class="confetti" style="left: 50%; background-color: purple; animation-delay: 0.8s;"></div>
-            <div class="confetti" style="left: 60%; background-color: orange; animation-delay: 1s;"></div>
-            <div class="confetti" style="left: 70%; background-color: pink; animation-delay: 1.2s;"></div>
-            <div class="confetti" style="left: 80%; background-color: cyan; animation-delay: 1.4s;"></div>
-            <div class="confetti" style="left: 90%; background-color: magenta; animation-delay: 1.6s;"></div>
-        `;
-         setTimeout(() => confettiContainer.innerHTML = '', 3000); // Clear confetti after 3 seconds
+    console.log("Confetti generated!");
+    if (typeof confetti !== 'undefined') {
+        var duration = 3000;
+        var end = Date.now() + duration;
+
+        (function frame() {
+            confetti({
+                particleCount: 5,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff']
+            });
+            confetti({
+                particleCount: 5,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff']
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
     }
 }
 
@@ -443,13 +486,13 @@ const lightboxImg = lightbox.querySelector('img');
 
 // On click, show lightbox with clicked image
 galleryImages.forEach(img => {
-  img.addEventListener('click', () => {
-    lightboxImg.src = img.src; // same image source
-    lightbox.style.display = 'flex';
-  });
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src; // same image source
+        lightbox.style.display = 'flex';
+    });
 });
 
 // Click outside to close lightbox
 lightbox.addEventListener('click', () => {
-  lightbox.style.display = 'none';
+    lightbox.style.display = 'none';
 });

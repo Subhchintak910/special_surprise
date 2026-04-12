@@ -4,9 +4,11 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fcefe7; /* A base color for fallback */
+    background-color: #fcefe7;
+    /* A base color for fallback */
     text-align: center;
-    overflow: hidden; /* Important for full-page animations */
+    overflow: hidden;
+    /* Important for full-page animations */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,16 +22,22 @@ body {
     top: 20px;
     right: 20px;
     z-index: 1000;
-    display: flex; /* Arrange buttons horizontally */
-    gap: 10px; /* Space between buttons */
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-    justify-content: flex-end; /* Align to the right */
-    max-width: calc(100% - 40px); /* Prevent overflow on small screens */
+    display: flex;
+    /* Arrange buttons horizontally */
+    gap: 10px;
+    /* Space between buttons */
+    flex-wrap: wrap;
+    /* Allow buttons to wrap on smaller screens */
+    justify-content: flex-end;
+    /* Align to the right */
+    max-width: calc(100% - 40px);
+    /* Prevent overflow on small screens */
 }
 
 /* Music Toggle Button */
 .music-toggle-button {
-    background-color: #f558b4; /* Pink */
+    background-color: #f558b4;
+    /* Pink */
     color: white;
     border: none;
     padding: 10px 15px;
@@ -37,9 +45,11 @@ body {
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s, transform 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    white-space: nowrap; /* Prevent text from wrapping inside button */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    /* Prevent text from wrapping inside button */
 }
+
 .music-toggle-button:hover {
     background-color: #e05e9e;
     transform: scale(1.05);
@@ -47,8 +57,10 @@ body {
 
 /* New: BTS Music Toggle Button Style */
 .bts-music-toggle {
-    background-color: #9c27b0; /* A BTS purple */
+    background-color: #9c27b0;
+    /* A BTS purple */
 }
+
 .bts-music-toggle:hover {
     background-color: #7b1fa2;
 }
@@ -62,7 +74,7 @@ body {
     height: 100%;
     overflow: hidden;
     z-index: -1;
-    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
 }
 
 .background-animation li {
@@ -71,31 +83,98 @@ body {
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.3); /* Slightly more visible bubbles */
+    background: rgba(255, 255, 255, 0.3);
+    /* Slightly more visible bubbles */
     animation: animate 25s linear infinite;
     bottom: -150px;
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4); /* Subtle glow */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    /* Subtle glow */
 }
 
 /* Existing li:nth-child rules */
-.background-animation li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
-.background-animation li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
-.background-animation li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
-.background-animation li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
-.background-animation li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
-.background-animation li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
-.background-animation li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
-.background-animation li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
-.background-animation li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-delay: 2s; animation-duration: 35s; }
-.background-animation li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-delay: 11s; }
+.background-animation li:nth-child(1) {
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+.background-animation li:nth-child(2) {
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.background-animation li:nth-child(3) {
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.background-animation li:nth-child(4) {
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.background-animation li:nth-child(5) {
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.background-animation li:nth-child(6) {
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.background-animation li:nth-child(7) {
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.background-animation li:nth-child(8) {
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.background-animation li:nth-child(9) {
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.background-animation li:nth-child(10) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 11s;
+}
 
 @keyframes animate {
     0% {
         transform: translateY(0) rotate(0deg);
         opacity: 1;
-        border-radius: 50%; /* Keep round */
+        border-radius: 50%;
+        /* Keep round */
     }
+
     100% {
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
@@ -114,63 +193,110 @@ body {
     height: 100%;
     position: relative;
     z-index: 1;
-    overflow: hidden; /* Ensure content within page doesn't break layout */
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.7); /* Soft text shadow */
+    overflow: hidden;
+    /* Ensure content within page doesn't break layout */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7);
+    /* Soft text shadow */
 }
 
 .page.active {
     display: flex;
-    animation: pageFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; /* Smoother page transition */
+    animation: pageFadeIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    /* Smoother page transition */
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(255, 105, 180, 0.15);
+    padding: 30px;
+    width: 90%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 @keyframes pageFadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
-h1, h2 {
+h1,
+h2 {
     font-family: 'Dancing Script', cursive;
     color: #5e2323;
     margin-bottom: 10px;
 }
 
-h1 { font-size: 3.8em; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
-h2 { font-size: 2.8em; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); }
+h1 {
+    font-size: 3.8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
+h2 {
+    font-size: 2.8em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    color: #333;
+    font-size: 1.25em;
+    line-height: 1.5;
+    max-width: 80%;
+}
 
 .button {
-    background-color: #ff69b4;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 25px;
     font-size: 16px;
-    margin: 8px;
-    border-radius: 8px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
     margin: 10px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25); /* More prominent shadow */
+    box-shadow: 0 6px 20px rgba(255, 20, 147, 0.3);
     text-transform: uppercase;
     letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .button:hover {
-    background-color: #ff1493;
-    transform: scale(1.08); /* More noticeable hover scale */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #ff1493, #c71585);
+    transform: translateY(-3px) scale(1.05);
+    /* Noticeable hover */
+    box-shadow: 0 8px 25px rgba(255, 20, 147, 0.5);
 }
 
 .nav-buttons {
     display: flex;
-    justify-content: space-around; /* Changed to space-around for better spacing */
-    width: 90%; /* Wider nav buttons area */
+    justify-content: space-around;
+    /* Changed to space-around for better spacing */
+    width: 90%;
+    /* Wider nav buttons area */
     max-width: 500px;
-    margin-top: 40px; /* More space */
-    position: relative; /* Keep relative */
-    z-index: 10; /* Ensure navigation buttons are above general page content */
-    padding-bottom: 10px; /* Add some padding below the buttons themselves */
+    margin-top: 40px;
+    /* More space */
+    position: relative;
+    /* Keep relative */
+    z-index: 10;
+    /* Ensure navigation buttons are above general page content */
+    padding-bottom: 10px;
+    /* Add some padding below the buttons themselves */
 }
 
 /* General Text & Button Animations (Page 1 & other elements) */
@@ -179,33 +305,102 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     transform: translateY(20px);
     animation: slideUpFadeIn 0.8s ease-out forwards;
 }
+
 .animate-button {
     opacity: 0;
     transform: translateY(20px) scale(0.9);
     animation: slideUpFadeIn 0.8s ease-out forwards;
 }
+
 /* Delay classes will be set by JS now */
 
 @keyframes slideUpFadeIn {
-    from { opacity: 0; transform: translateY(20px) scale(0.95); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 /* Page 2: Birthday Wish specific animations */
 .animate-wish-text {
-    opacity: 0; /* JS will manage visibility and animation */
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: .15em solid orange; /* The caret */
-    width: 0; /* Start with no width */
+    opacity: 0;
+    transform: scale(0.5);
 }
-@keyframes typewriter {
-    from { width: 0 }
-    to { width: 100% }
+
+@keyframes bounceZoom {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange }
+
+/* Sparkle CSS for random placement and twinkling */
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.8), 0 0 20px 4px #ffeb3b, 0 0 30px #ff69b4;
+    animation: twinkle 1.5s infinite alternate;
+    opacity: 0;
+    pointer-events: none;
+    /* Don't block clicks */
+}
+
+@keyframes twinkle {
+    0% {
+        transform: scale(0.5) rotate(0deg);
+        opacity: 0.2;
+    }
+
+    100% {
+        transform: scale(1.5) rotate(45deg);
+        opacity: 1;
+    }
+}
+
+.shake-animation {
+    animation: shake 0.6s cubic-bezier(.36, .07, .19, .97) forwards;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-4px, 0, 0) rotate(-5deg);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(6px, 0, 0) rotate(5deg);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-10px, 0, 0) rotate(-10deg);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(10px, 0, 0) rotate(10deg);
+    }
 }
 
 #confetti-container {
@@ -215,27 +410,55 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     width: 100%;
     height: 100%;
     overflow: hidden;
-    pointer-events: none; /* Allows clicks to pass through */
-    z-index: 5; /* Above page content but below button */
+    pointer-events: none;
+    /* Allows clicks to pass through */
+    z-index: 5;
+    /* Above page content but below button */
 }
+
 .confetti {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: #ffeb3b; /* Yellow */
+    background-color: #ffeb3b;
+    /* Yellow */
     transform-origin: 50% 50%;
     animation: fall 3s forwards ease-out;
-    opacity: 0; /* Start invisible */
+    opacity: 0;
+    /* Start invisible */
     border-radius: 2px;
 }
-.confetti:nth-child(2n) { background-color: #ff1493; } /* Pink */
-.confetti:nth-child(3n) { background-color: #8bc34a; } /* Green */
-.confetti:nth-child(4n) { background-color: #2196f3; } /* Blue */
+
+.confetti:nth-child(2n) {
+    background-color: #ff1493;
+}
+
+/* Pink */
+.confetti:nth-child(3n) {
+    background-color: #8bc34a;
+}
+
+/* Green */
+.confetti:nth-child(4n) {
+    background-color: #2196f3;
+}
+
+/* Blue */
 
 @keyframes fall {
-    0% { transform: translateY(-100px) rotateZ(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    100% { transform: translateY(100vh) rotateZ(720deg); opacity: 0; }
+    0% {
+        transform: translateY(-100px) rotateZ(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotateZ(720deg);
+        opacity: 0;
+    }
 }
 
 
@@ -244,44 +467,96 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     cursor: pointer;
     position: relative;
     margin-top: 30px;
-    animation: cakeWobble 4s ease-in-out infinite; /* Cake wobble effect */
-    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.2));
+    animation: cakeWobble 4s ease-in-out infinite;
+    /* Cake wobble effect */
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
 }
-#cake-uncut { width: 250px; transition: transform 0.3s; }
-#cake-uncut:hover { transform: scale(1.03); } /* Slight hover effect */
-#cake-cut { display: none; width: 250px; animation: cakeCutEffect 0.5s ease-out; }
+
+#cake-uncut {
+    width: 250px;
+    transition: transform 0.3s;
+}
+
+#cake-uncut:hover {
+    transform: scale(1.03);
+}
+
+/* Slight hover effect */
+#cake-cut {
+    display: none;
+    width: 250px;
+    animation: cakeCutEffect 0.5s ease-out;
+}
 
 @keyframes cakeWobble {
-    0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-1deg); }
-    75% { transform: rotate(1deg); }
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-1deg);
+    }
+
+    75% {
+        transform: rotate(1deg);
+    }
 }
+
 @keyframes cakeCutEffect {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .candle-flame {
     position: absolute;
-    top: -15px; /* Adjust based on your cake image */
-    left: 45%; /* Adjust based on your cake image */
+    top: -15px;
+    /* Adjust based on your cake image */
+    left: 45%;
+    /* Adjust based on your cake image */
     width: 10px;
     height: 20px;
-    background-color: #ffcc00; /* Yellow flame base */
+    background-color: #ffcc00;
+    /* Yellow flame base */
     border-radius: 50% 50% 0 0 / 100% 100% 0 0;
     filter: blur(2px) drop-shadow(0 0 5px orange);
     animation: flameFlicker 0.8s infinite alternate;
-    z-index: 2; /* Above cake */
+    z-index: 2;
+    /* Above cake */
 }
+
 .candle-flame.second-candle {
-    left: 55%; /* Position for a second candle */
+    left: 55%;
+    /* Position for a second candle */
     animation-delay: 0.4s;
 }
 
 @keyframes flameFlicker {
-    0% { transform: scaleY(1); opacity: 1; filter: blur(2px) drop-shadow(0 0 5px orange); }
-    50% { transform: scaleY(0.8) scaleX(1.1); opacity: 0.9; filter: blur(1px) drop-shadow(0 0 7px red); }
-    100% { transform: scaleY(1.1) scaleX(0.9); opacity: 1; filter: blur(2px) drop-shadow(0 0 5px yellow); }
+    0% {
+        transform: scaleY(1);
+        opacity: 1;
+        filter: blur(2px) drop-shadow(0 0 5px orange);
+    }
+
+    50% {
+        transform: scaleY(0.8) scaleX(1.1);
+        opacity: 0.9;
+        filter: blur(1px) drop-shadow(0 0 7px red);
+    }
+
+    100% {
+        transform: scaleY(1.1) scaleX(0.9);
+        opacity: 1;
+        filter: blur(2px) drop-shadow(0 0 5px yellow);
+    }
 }
 
 
@@ -290,18 +565,28 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     position: relative;
     cursor: pointer;
     margin-top: 30px;
-    animation: giftGlow 2s infinite alternate ease-in-out; /* Subtle glow */
+    animation: giftGlow 2s infinite alternate ease-in-out;
+    /* Subtle glow */
 }
+
 #gift-container img {
     width: 200px;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
     transition: transform 0.3s;
 }
-#gift-container img:hover { transform: scale(1.05); }
+
+#gift-container img:hover {
+    transform: scale(1.05);
+}
 
 @keyframes giftGlow {
-    from { filter: drop-shadow(0 0 10px #ff69b4); }
-    to { filter: drop-shadow(0 0 20px #ff1493); }
+    from {
+        filter: drop-shadow(0 0 10px #ff69b4);
+    }
+
+    to {
+        filter: drop-shadow(0 0 20px #ff1493);
+    }
 }
 
 #teddy-reveal {
@@ -312,13 +597,15 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     background: rgba(255, 255, 255, 0.7);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
+
 #teddy-reveal img {
     width: 180px;
     margin-bottom: 15px;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
 }
+
 #teddy-reveal blockquote {
     font-style: italic;
     color: #d6336c;
@@ -332,23 +619,32 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 }
 
 @keyframes fadeInScale {
-    from { opacity: 0; transform: scale(0.8); }
-    to { opacity: 1; transform: scale(1); }
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /* Page 5: Memory Gallery */
 #gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     gap: 15px;
     margin-top: 30px;
-    max-width: 500px;
-    max-height: 900px; /* Limit height */
+    max-width: 600px;
     width: 100%;
     padding: 0;
-    overflow: visible; /* ensure lift is visible */
-    position: relative; /* add this */
-    z-index: 1;         /* ensures above background */
+    overflow: visible;
+    /* ensure lift is visible */
+    position: relative;
+    /* add this */
+    z-index: 1;
+    /* ensures above background */
 }
 
 #gallery-grid img {
@@ -358,23 +654,32 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+
 .gallery-item {
     width: 100%;
-    height: 120px; /* Fixed height for consistency */
+    height: 120px;
+    /* Fixed height for consistency */
     object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-    opacity: 0; /* Initial state for staggered animation */
+    opacity: 0;
+    /* Initial state for staggered animation */
     transform: scale(0.8);
-    animation: galleryItemAppear 0.6s forwards ease-out; /* JS will set delay */
+    animation: galleryItemAppear 0.6s forwards ease-out;
+    /* JS will set delay */
 }
+
 #gallery-grid img:hover,
 #gallery-grid img:active {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 15px 25px rgba(218, 1, 1, 0.993);
-    z-index: 2; /* lift above siblings */
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+    /* Deep cinematic shadow */
+    z-index: 2;
+    filter: sepia(0) brightness(1.1);
+    /* Full color pop */
 }
+
 /* New style for placeholder items - visually distinct */
 .gallery-item.placeholder-item {
     background-color: #0d0d0d;
@@ -388,18 +693,28 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     border-color: #0d0d0d;
     border-width: 2px;
 }
+
 .gallery-item.placeholder-item::before {
     content: "Add Photo Here";
 }
+
 /* Hide actual image for placeholders until you add them */
 .gallery-item.placeholder-item img {
     display: none;
 }
 
 @keyframes galleryItemAppear {
-    from { opacity: 0; transform: scale(0.8) translateY(20px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
 }
+
 /* Lightbox Overlay */
 #lightbox {
     position: fixed;
@@ -407,8 +722,9 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
-    display: none; /* hidden by default */
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    /* hidden by default */
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -417,17 +733,29 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 /* Lightbox Image */
 #lightbox img {
     max-width: 90%;
-    max-height: 80%;
+    max-height: 90%;
     border-radius: 10px;
-    box-shadow: 0 0 30px rgba(222, 2, 222, 0.822);
-    animation: zoomIn 0.5s ease;
-    object-fit: contain; /* image proportion maintain */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.822);
+    object-fit: contain;
+    /* Ken Burns slow pan and zoom */
+    animation: kenBurns 12s infinite alternate linear;
 }
 
-/* Zoom animation */
-@keyframes zoomIn {
-    from { transform: scale(0.7); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+/* Cinematic Zoom animation */
+@keyframes kenBurns {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    3% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
 }
 
 
@@ -436,19 +764,27 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* Adjusted gap for better mobile spacing */
+    gap: 15px;
+    /* Adjusted gap for better mobile spacing */
     perspective: 1000px;
     margin-top: 30px;
-    max-width: 90%; /* Limit width to prevent overflow on small screens */
-    padding: 0 10px; /* Padding for mobile */
+    max-width: 90%;
+    /* Limit width to prevent overflow on small screens */
+    padding: 0 10px;
+    /* Padding for mobile */
     box-sizing: border-box;
 }
+
 .flip-card {
-    width: 130px; /* Adjusted width for mobile responsiveness */
-    height: 170px; /* Adjusted height for mobile responsiveness */
+    width: 130px;
+    /* Adjusted width for mobile responsiveness */
+    height: 170px;
+    /* Adjusted height for mobile responsiveness */
     cursor: pointer;
-    flex-shrink: 0; /* Prevent cards from shrinking too much */
-    margin-bottom: 10px; /* Add some margin for vertical spacing */
+    flex-shrink: 0;
+    /* Prevent cards from shrinking too much */
+    margin-bottom: 10px;
+    /* Add some margin for vertical spacing */
 }
 
 .flip-card-inner {
@@ -456,15 +792,21 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s ease-in-out; /* Smoother, less bouncy */
+    transition: transform 0.6s ease-in-out;
+    /* Smoother, less bouncy */
     transform-style: preserve-3d;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.25); /* More pronounced shadow */
-    border-radius: 12px; /* Slightly rounder corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    /* More pronounced shadow */
+    border-radius: 12px;
+    /* Slightly rounder corners */
 }
+
 .flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
-.flip-card-front, .flip-card-back {
+
+.flip-card-front,
+.flip-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -474,81 +816,181 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px; /* Padding for text inside */
+    padding: 10px;
+    /* Padding for text inside */
     box-sizing: border-box;
 }
+
 .flip-card-front {
-    background: linear-gradient(135deg, #a8c0ff, #3f2b96); /* Cooler gradient */
+    background: linear-gradient(135deg, #a8c0ff, #3f2b96);
+    /* Cooler gradient */
     color: white;
     font-size: 1.6em;
     font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
 .flip-card-back {
     background-color: #f8f8f8;
     transform: rotateY(180deg);
 }
+
 .flip-card-back img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 12px;
 }
+
+/* Purple Neon Aura for flipped cards */
+#bts-section .flip-card.flipped .flip-card-inner {
+    box-shadow: 0 0 15px 3px rgba(156, 39, 176, 0.8), 0 0 30px 8px rgba(156, 39, 176, 0.5);
+    border: 1px solid rgba(225, 190, 231, 0.4);
+}
+
 /* Purple shadow glow without affecting flip */
 #bts-section .flip-card:hover .flip-card-inner,
 #bts-section .flip-card:active .flip-card-inner {
-    box-shadow: 0 15px 30px rgb(196, 1, 196); /* purple glow */
+    box-shadow: 0 15px 30px rgb(196, 1, 196);
+    /* purple glow */
     /* remove transform scale to not block flip */
+}
+
+/* Galaxy Background for Page 6 */
+#page6 {
+    transition: background 1s ease, color 1s ease;
+}
+
+#page6.galaxy-mode {
+    background: linear-gradient(135deg, #090a0f, #23153c, #11082b);
+    background-size: 400% 400%;
+    animation: moveGalaxy 10s ease infinite;
+    color: white;
+}
+
+#page6.galaxy-mode .glass-panel {
+    background: rgba(10, 5, 20, 0.6);
+    border: 1px solid rgba(156, 39, 176, 0.4);
+    box-shadow: 0 0 50px rgba(156, 39, 176, 0.3);
+}
+
+@keyframes moveGalaxy {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.neon-text {
+    font-size: 2.2em;
+    color: #fff;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #e1bee7,
+        0 0 40px #ce93d8,
+        0 0 80px #ba68c8,
+        0 0 90px #ab47bc,
+        0 0 100px #9c27b0,
+        0 0 150px #8e24aa;
+    margin-bottom: 20px;
+    animation: pulsateNeon 1.5s infinite alternate;
+}
+
+@keyframes pulsateNeon {
+    100% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 11px #fff,
+            0 0 19px #fff,
+            0 0 40px #e1bee7,
+            0 0 80px #ce93d8,
+            0 0 90px #ba68c8,
+            0 0 100px #ab47bc,
+            0 0 150px #9c27b0;
+    }
+
+    0% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 4px #fff,
+            0 0 6px #fff,
+            0 0 10px #e1bee7,
+            0 0 45px #ce93d8,
+            0 0 55px #ba68c8,
+            0 0 70px #ab47bc,
+            0 0 80px #9c27b0;
+    }
 }
 
 
 /* Page 7: Letter */
 #letter-content {
-    background: linear-gradient(to bottom, #fff0fd 60%, #e9b5e2 100%); /* Soft paper gradient */
-    padding: 35px;
-    border-radius: 16px; /* More rounded */
-    max-width: 550px;
-    width: 90%; /* Responsive width */
-    margin: 20px auto; /* Centered with margin */
-    padding: 10px; /* Reduced padding for smaller screens */
-    font-size: 18px; /* Slightly smaller font for better fit */
+    background: transparent;
+    /* Rely on parent glass-panel for base, or give soft white */
+    padding: 20px;
+    border-radius: 16px;
+    /* More rounded */
+    width: 100%;
+    /* Responsive width */
+    font-size: 18px;
+    /* Slightly smaller font for better fit */
     text-align: left;
     overflow-y: auto;
     /* Adjust max-height and margin-bottom for better flow on all screens */
     max-height: 45vh;
-    margin-bottom: 5px; /* Increased margin for navigation buttons below */
-    line-height: 1.6; /* Better readability */
+    margin-bottom: 5px;
+    /* Increased margin for navigation buttons below */
+    line-height: 1.6;
+    /* Better readability */
     color: #444;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15); /* Stronger shadow */
-    position: relative; /* For pseudo-elements */
-    border: 1px solid #ffe0b2; /* Subtle border */
+    position: relative;
+    /* For pseudo-elements */
 }
+
 #letter-content p {
-    margin-bottom: 1em; /* Space between paragraphs */
-    opacity: 0; /* Initial state for fade-in */
+    margin-bottom: 1em;
+    /* Space between paragraphs */
+    opacity: 0;
+    /* Initial state for fade-in */
     transform: translateY(10px);
-    animation: letterFadeIn 0.8s forwards ease-out; /* JS will set delay */
+    animation: letterFadeIn 0.8s forwards ease-out;
+    /* JS will set delay */
 }
+
 #letter-content p strong {
-    color: #d6336c; /* Highlight names */
+    color: #d6336c;
+    /* Highlight names */
 }
 
 /* Pseudo-elements for a folded paper effect */
-#letter-content::before, #letter-content::after {
+#letter-content::before,
+#letter-content::after {
     content: '';
     position: absolute;
     width: 100%;
-    height: 20px; /* Simulate fold */
+    height: 20px;
+    /* Simulate fold */
     left: 0;
-    background: rgba(0,0,0,0.05); /* Shadow for fold */
+    background: rgba(0, 0, 0, 0.05);
+    /* Shadow for fold */
     pointer-events: none;
     z-index: 1;
 }
+
 #letter-content::before {
     top: 0;
     border-radius: 20px 20px 0 0;
     transform: translateY(-10px);
 }
+
 #letter-content::after {
     bottom: 0;
     border-radius: 0 0 20px 20px;
@@ -556,43 +998,141 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
 }
 
 @keyframes letterFadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Romantic Letter Specific Animations */
+.heartbeat {
+    animation: heartbeatAnim 1.5s infinite ease-in-out;
+    display: inline-block;
+}
+
+@keyframes heartbeatAnim {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.15);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+}
+
+#letter-body {
+    animation: magicalTextGlow 3s infinite alternate ease-in-out;
+}
+
+@keyframes magicalTextGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(214, 51, 108, 0);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(214, 51, 108, 0.5);
+    }
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    h1 { font-size: 2.8em; }
-    h2 { font-size: 2em; }
-    p { font-size: 1em; }
-    .button { padding: 12px 25px; font-size: 1em; }
+    h1 {
+        font-size: 2.8em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
     .nav-buttons {
         width: 95%;
         max-width: none;
-        margin-top: 25px; /* Slightly less margin when screen is smaller */
-        padding-bottom: 3px; /* Adjust padding for smaller screens */
+        margin-top: 25px;
+        /* Slightly less margin when screen is smaller */
+        padding-bottom: 3px;
+        /* Adjust padding for smaller screens */
     }
-    #cake-container img { width: 180px; }
-    #gift-container img { width: 180px; }
-    #teddy-reveal img { width: 150px; }
-    #gallery-grid { grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 8px; }
-    .gallery-item { height: 100px; border-radius: 10px; }
-    .flip-card { width: 100px; height: 140px; } /* Further adjust for very small screens */
-    .flip-card-front { font-size: 1em; } /* Smaller font for card names */
+
+    #cake-container img {
+        width: 180px;
+    }
+
+    #gift-container img {
+        width: 180px;
+    }
+
+    #teddy-reveal img {
+        width: 150px;
+    }
+
+    #gallery-grid {
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    .gallery-item {
+        height: 100px;
+        border-radius: 10px;
+    }
+
+    .flip-card {
+        width: 100px;
+        height: 140px;
+    }
+
+    /* Further adjust for very small screens */
+    .flip-card-front {
+        font-size: 1em;
+    }
+
+    /* Smaller font for card names */
     #letter-content {
         padding: 1px;
         /* Calculate max-height based on available viewport, accounting for other elements */
-        max-height: calc(40vh - 10px); /* 100vh minus header/h2 + nav + some buffer */
-        margin-bottom: 0px; /* Ensure space for nav buttons */
+        max-height: calc(40vh - 10px);
+        /* 100vh minus header/h2 + nav + some buffer */
+        margin-bottom: 0px;
+        /* Ensure space for nav buttons */
     }
 
     /* Adjust music buttons for smaller screens */
     .music-buttons-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: flex-end; /* Align stacked buttons to the right */
+        flex-direction: column;
+        /* Stack buttons vertically */
+        align-items: flex-end;
+        /* Align stacked buttons to the right */
         right: 10px;
         top: 10px;
-        gap: 5px; /* Smaller gap when stacked */
+        gap: 5px;
+        /* Smaller gap when stacked */
     }
 }
 
@@ -601,21 +1141,62 @@ p { color: #333; font-size: 1.25em; line-height: 1.5; max-width: 80%; }
     font-style: italic;
     font-family: "Comic Sans MS", 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 @media (max-width: 480px) {
-    h1 { font-size: 2em; }
-    h2 { font-size: 1.5em; }
-    p { font-size: 0.9em; }
-    .button { padding: 10px 20px; font-size: 0.9em; }
-    #cake-container img, #cake-cut { width: 150px; }
-    #gift-container img { width: 150px; }
-    #teddy-reveal img { width: 120px; }
-    #gallery-grid { grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 8px; }
-    .gallery-item { height: 80px; }
-    .flip-card { width: 85px; height: 110px; } /* Even smaller for very small phones */
-    .flip-card-front { font-size: 0.9em; }
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    #cake-container img,
+    #cake-cut {
+        width: 150px;
+    }
+
+    #gift-container img {
+        width: 150px;
+    }
+
+    #teddy-reveal img {
+        width: 120px;
+    }
+
+    #gallery-grid {
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+        gap: 8px;
+    }
+
+    .gallery-item {
+        height: 80px;
+    }
+
+    .flip-card {
+        width: 85px;
+        height: 110px;
+    }
+
+    /* Even smaller for very small phones */
+    .flip-card-front {
+        font-size: 0.9em;
+    }
+
     #letter-content {
         padding: 15px;
-        max-height: calc(40vh - 10px); /* Adjusted for even smaller screens */
-        margin-bottom: 0px; /* Ensure space for nav buttons */
+        max-height: calc(40vh - 10px);
+        /* Adjusted for even smaller screens */
+        margin-bottom: 0px;
+        /* Ensure space for nav buttons */
     }
 }

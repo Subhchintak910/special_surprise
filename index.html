@@ -23,6 +23,9 @@
 
     <title>Special Surprise! Taniya | Birthday Surprise for Taniya | Special Gift Website Taniya| Happy Birthday Taniya 🎉</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Professional effects library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <div class="background-animation">
@@ -62,9 +65,11 @@
 
     <!-- Page 1: Home Page -->
     <div class="page active" id="page1">
-        <h1 class="animate-text">Special Surprise for Taniya</h1>
-        <p class="animate-text delay-1">Let's begin your surprise</p>
-        <button class="button animate-button delay-2" onclick="showPage('page2')">Let's Begin</button>
+        <div class="glass-panel">
+            <h1 class="animate-text">Special Surprise for Taniya</h1>
+            <p class="animate-text delay-1">Let's begin your surprise</p>
+            <button class="button animate-button delay-2" onclick="showPage('page2')">Let's Begin</button>
+        </div>
     </div>
 
     <!-- Page 2: Birthday Wish -->
@@ -88,69 +93,77 @@
         <div class="sparkle"></div>
 
 
-        <h1 class="animate-fade-in">Happy Birthday Taniya!</h1>
-        <p class="animate-wish-text delay-1">Wishing you a day filled with joy, laughter, and all your heart's desires.</p>
-        <div id="confetti-container"></div>
-        <div class="nav-buttons animate-fade-in delay-2">
-            <button class="button" onclick="showPage('page1')">Back</button>
-            <button class="button" onclick="showPage('page3')">Next</button>
+        <div class="glass-panel">
+            <h1 class="animate-fade-in">Happy Birthday Taniya!</h1>
+            <p class="animate-wish-text delay-1">Wishing you a day filled with joy, laughter, and all your heart's desires.</p>
+            <div id="confetti-container"></div>
+            <div class="nav-buttons animate-fade-in delay-2">
+                <button class="button" onclick="showPage('page1')">Back</button>
+                <button class="button" onclick="showPage('page3')">Next</button>
+            </div>
         </div>
     </div>
 
 
     <!-- Page 3: Virtual Cake -->
     <div class="page" id="page3">
-        <h2 class="animate-text">Time for a Cake!</h2>
-        <p class="animate-text delay-1">Click on the cake to cut it!</p>
-        <div id="cake-container" onclick="cutCake()" class="animate-cake">
-            <img id="cake-uncut" src="cake.png" alt="Birthday Cake">
-            <img id="cake-cut" src="cake-cut.png" alt="Cut Birthday Cake">
-            <div class="candle-flame"></div>
-            <div class="candle-flame second-candle"></div>
-        </div>
-        <div class="nav-buttons animate-fade-in delay-2">
-            <button class="button" onclick="showPage('page2')">Back</button>
-            <button class="button" onclick="showPage('page4')">Next</button>
+        <div class="glass-panel">
+            <h2 class="animate-text">Time for a Cake!</h2>
+            <p class="animate-text delay-1">Click on the cake to cut it!</p>
+            <div id="cake-container" onclick="cutCake()" class="animate-cake">
+                <img id="cake-uncut" src="cake.png" alt="Birthday Cake">
+                <img id="cake-cut" src="cake-cut.png" alt="Cut Birthday Cake">
+                <div class="candle-flame"></div>
+                <div class="candle-flame second-candle"></div>
+            </div>
+            <div class="nav-buttons animate-fade-in delay-2">
+                <button class="button" onclick="showPage('page2')">Back</button>
+                <button class="button" onclick="showPage('page4')">Next</button>
+            </div>
         </div>
     </div>
 
     <!-- Page 4: Gift -->
     <div class="page" id="page4">
-        <h2 class="animate-text">A Little Gift for You</h2>
-        <div id="gift-container" onclick="openGift()" class="animate-gift">
-            <p>Click on the gift to open it!</p>
-            <img src="gift.png" alt="Gift Box">
-        </div>
-        <div id="teddy-reveal" class="animate-fade-in">
-            <img src="teddy.png" alt="Teddy Bear">
-            <blockquote>Here's a big bear hug for you on your special day! Hope you have a pawsitively amazing birthday!</blockquote>
-        </div>
-        <div class="nav-buttons animate-fade-in delay-2">
-            <button class="button" onclick="showPage('page3')">Back</button>
-            <button class="button" onclick="showPage('page5')">Next</button>
+        <div class="glass-panel">
+            <h2 class="animate-text">A Little Gift for You</h2>
+            <div id="gift-container" onclick="openGift()" class="animate-gift">
+                <p>Click on the gift to open it!</p>
+                <img src="gift.png" alt="Gift Box">
+            </div>
+            <div id="teddy-reveal" class="animate-fade-in">
+                <img src="teddy.png" alt="Teddy Bear">
+                <blockquote>Here's a big bear hug for you on your special day! Hope you have a pawsitively amazing birthday!</blockquote>
+            </div>
+            <div class="nav-buttons animate-fade-in delay-2">
+                <button class="button" onclick="showPage('page3')">Back</button>
+                <button class="button" onclick="showPage('page5')">Next</button>
+            </div>
         </div>
     </div>
 
     <!-- Page 5: Memory Gallery -->
     <div class="page" id="page5">
-        <h2 class="animate-text">Our Memory Gallery</h2>
-        <p class="animate-text delay-1">A few moments to cherish forever.</p>
-        <div id="gallery-grid" class="animate-grid">
-            <img src="gallery1.jpg" alt="Hangup seen" class="gallery-item" loading="lazy">
-            <img src="gallery2.jpg" alt="Candle image" class="gallery-item" loading="lazy">
-            <img src="gallery3.jpg" alt="Sunrise view" class="gallery-item" loading="lazy">
-            <img src="gallery4.jpg" alt="Chaumin" class="gallery-item" loading="lazy">
-            <!-- New: Placeholder for more gallery items -->
-            <img src="gallery5.jpg" alt="Ice-cream" class="gallery-item placeholder-item" loading="lazy">
-            <img src="gallery6.jpg" alt="Gol-Gappe" class="gallery-item placeholder-item" loading="lazy">
-            <img src="gallery7.jpg" alt="Portrat taniya" class="gallery-item placeholder-item" loading="lazy">
-            <img src="gallery8.jpg" alt="Taniya anime" class="gallery-item placeholder-item" loading="lazy">
-            <img src="gallery9.jpg" alt="Taniya sketch" class="gallery-item placeholder-item" loading="lazy">
-            <!-- <img src="gallery_placeholder.jpg" alt="Memory 10" class="gallery-item placeholder-item"> -->
-        </div>
-        <div class="nav-buttons animate-fade-in delay-2">
-            <button class="button" onclick="showPage('page4')">Back</button>
-            <button class="button" onclick="showPage('page6')">Next</button>
+        <div class="glass-panel">
+            <h2 class="animate-text">Our Memory Gallery</h2>
+            <p class="animate-text delay-1">A few moments to cherish forever.</p>
+            <div id="gallery-grid" class="animate-grid">
+                <img src="gallery1.jpg" alt="Hangup seen" class="gallery-item" loading="lazy">
+                <img src="gallery2.jpg" alt="Candle image" class="gallery-item" loading="lazy">
+                <img src="gallery3.jpg" alt="Sunrise view" class="gallery-item" loading="lazy">
+                <img src="gallery4.jpg" alt="Chaumin" class="gallery-item" loading="lazy">
+                <!-- New: Placeholder for more gallery items -->
+                <img src="gallery5.jpg" alt="Ice-cream" class="gallery-item placeholder-item" loading="lazy">
+                <img src="gallery6.jpg" alt="Gol-Gappe" class="gallery-item placeholder-item" loading="lazy">
+                <img src="gallery7.jpg" alt="Portrat taniya" class="gallery-item placeholder-item" loading="lazy">
+                <img src="gallery8.jpg" alt="Taniya anime" class="gallery-item placeholder-item" loading="lazy">
+                <img src="gallery9.jpg" alt="Taniya sketch" class="gallery-item placeholder-item" loading="lazy">
+                <!-- <img src="gallery_placeholder.jpg" alt="Memory 10" class="gallery-item placeholder-item"> -->
+            </div>
+            <div class="nav-buttons animate-fade-in delay-2">
+                <button class="button" onclick="showPage('page4')">Back</button>
+                <button class="button" onclick="showPage('page6')">Next</button>
+            </div>
         </div>
     </div>
     <!-- Modal HTML: add this at the end of <body> -->
@@ -165,110 +178,115 @@
 
     <!-- Page 6: BTS Army Section -->
     <div class="page" id="page6">
-        <h2 class="animate-text">For the biggest BTS Army!</h2>
-        <p class="animate-text delay-1">Click on a name to reveal the picture!</p>
-        <div id="bts-section" class="animate-grid-cards">
-            <div class="flip-card" onclick="flipCard(this)">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">RM</div>
-                    <div class="flip-card-back"><img src="rm.jpg" alt="RM"></div>
+        <div class="glass-panel" id="bts-glass">
+            <h2 class="animate-text">For the biggest BTS Army!</h2>
+            <p class="animate-text delay-1">Click on a name to reveal the picture!</p>
+            <h3 id="army-forever-text" style="display: none;" class="neon-text">ARMY Forever 💜</h3>
+            <div id="bts-section" class="animate-grid-cards">
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">RM</div>
+                        <div class="flip-card-back"><img src="rm.jpg" alt="RM"></div>
+                    </div>
+                </div>
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">Jin</div>
+                        <div class="flip-card-back"><img src="jin.jpg" alt="Jin"></div>
+                    </div>
+                </div>
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">Suga</div>
+                        <div class="flip-card-back"><img src="suga.jpg" alt="Suga"></div>
+                    </div>
+                </div>
+                 <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">J-Hope</div>
+                        <div class="flip-card-back"><img src="jhope.jpg" alt="J-Hope"></div>
+                    </div>
+                </div>
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">Jimin</div>
+                        <div class="flip-card-back"><img src="jimin.jpg" alt="Jimin"></div>
+                    </div>
+                </div>
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">V</div>
+                        <div class="flip-card-back"><img src="v.jpg" alt="V"></div>
+                    </div>
+                </div>
+                <div class="flip-card" onclick="flipCard(this)">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">Jungkook</div>
+                        <div class="flip-card-back"><img src="jungkook.jpg" alt="Jungkook"></div>
+                    </div>
                 </div>
             </div>
-            <div class="flip-card" onclick="flipCard(this)">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">Jin</div>
-                    <div class="flip-card-back"><img src="jin.jpg" alt="Jin"></div>
-                </div>
+            <div class="nav-buttons animate-fade-in delay-2">
+                <button class="button" onclick="showPage('page5')">Back</button>
+                <button class="button" onclick="showPage('page7')">Next</button>
             </div>
-            <div class="flip-card" onclick="flipCard(this)">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">Suga</div>
-                    <div class="flip-card-back"><img src="suga.jpg" alt="Suga"></div>
-                </div>
-            </div>
-             <div class="flip-card" onclick="flipCard(this)">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">J-Hope</div>
-                    <div class="flip-card-back"><img src="jhope.jpg" alt="J-Hope"></div>
-                </div>
-            </div>
-            <div class="flip-card" onclick="flipCard(this)">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">Jimin</div>
-                    <div class="flip-card-back"><img src="jimin.jpg" alt="Jimin"></div>
-                </div>
-            </div>
-            <div class="flip-card" onclick="flipCard(this)">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">V</div>
-                    <div class="flip-card-back"><img src="v.jpg" alt="V"></div>
-                </div>
-            </div>
-            <div class="flip-card" onclick="flipCard(this)">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">Jungkook</div>
-                    <div class="flip-card-back"><img src="jungkook.jpg" alt="Jungkook"></div>
-                </div>
-            </div>
-        </div>
-        <div class="nav-buttons animate-fade-in delay-2">
-            <button class="button" onclick="showPage('page5')">Back</button>
-            <button class="button" onclick="showPage('page7')">Next</button>
         </div>
     </div>
 
     <!-- Page 7: Birthday Letter -->
     <div class="page" id="page7">
-        <h2 class="animate-text">A Letter For You</h2>
-        <div id="letter-content" class="animate-letter">
-            <p><strong>🌸My Dearest Taniya,🌸</strong></p>
-        
-         <div id="letter-body">   
-            <p>✨Happy Birthday to you🌹🌺<br/>
-                Aaj tumhari zindagi ka ek aur khoobsurat din hai, ek naya chapter, ek nayi kahani. Ye din sirf tumhara hai, aur meri yahi dua hai ki ye tumhari life ke sabse zyada khush aur roshan dinon ki shuruaat ho.</p>
-
-            <p>Tumhari muskaan hamesha ek aisi roshni rahi hai jo andheron ko bhi mita deti hai. Tumhari presence apne aap mein ek blessing hai — jahan tum hoti ho, wahan positivity aur warmth apne aap aa jaati hai. Tum jaisi insaan bohot kam milti hai, aur tumhara dil jitna khoobsurat hai, utna hi tumhara safar bhi hamesha roshan ho.</p>
+        <div class="glass-panel">
+            <h2 class="animate-text">A Letter For You</h2>
+            <div id="letter-content" class="animate-letter">
+                <p class="heartbeat"><strong>🌸My Dearest Taniya,🌸</strong></p>
             
-            <p>Zindagi mein kabhi kabhi kuch pal hote hain jo yaadgar ban jaate hain, aur kuch log hote hain jo apni presence se sab kuch aur khoobsurat bana dete hain, or tum unhi logon mein se ek ho. </p>
+             <div id="letter-body">   
+                <p>✨Happy Birthday to you🌹🌺<br/>
+                    Aaj tumhari zindagi ka ek aur khoobsurat din hai, ek naya chapter, ek nayi kahani. Ye din sirf tumhara hai, aur meri yahi dua hai ki ye tumhari life ke sabse zyada khush aur roshan dinon ki shuruaat ho.</p>
 
-            <p>Aaj ke din bas itna yaad rakhna — duniya mein tum jaise dil bohot rare hote hain. Jo bhi tumse milta hai, apne aap ko lucky samajhta hai. Tumhari simplicity, tumhari kindness aur tumhara pure heart hi tumhe sabse special banata hai;Tumhari honesty aur tumhara positive aura – sab kuch itna inspiring hai ki jo bhi tumhe jaanta hai, woh apne aap ko lucky samajhta hai.</p>
+                <p>Tumhari muskaan hamesha ek aisi roshni rahi hai jo andheron ko bhi mita deti hai. Tumhari presence apne aap mein ek blessing hai — jahan tum hoti ho, wahan positivity aur warmth apne aap aa jaati hai. Tum jaisi insaan bohot kam milti hai, aur tumhara dil jitna khoobsurat hai, utna hi tumhara safar bhi hamesha roshan ho.</p>
+                
+                <p>Zindagi mein kabhi kabhi kuch pal hote hain jo yaadgar ban jaate hain, aur kuch log hote hain jo apni presence se sab kuch aur khoobsurat bana dete hain, or tum unhi logon mein se ek ho. </p>
 
-            <p>Tum jaisi insaan ke liye shabdon mein wishes likhna aasaan nahi hai, kyunki tum khud ek ehsaas ho. Aaj ke din bas yahi kehna hai – duniya ki saari khushiyan tumhari jholi mein ho, tumhara har sapna tumhari aankhon ke samne sach ho jaye, aur tumhara dil hamesha sukoon paaye.</p>
+                <p>Aaj ke din bas itna yaad rakhna — duniya mein tum jaise dil bohot rare hote hain. Jo bhi tumse milta hai, apne aap ko lucky samajhta hai. Tumhari simplicity, tumhari kindness aur tumhara pure heart hi tumhe sabse special banata hai;Tumhari honesty aur tumhara positive aura – sab kuch itna inspiring hai ki jo bhi tumhe jaanta hai, woh apne aap ko lucky samajhta hai.</p>
 
-            <p>Main dua karta hoon ki tumhari life hamesha naye rangon se bhari rahe – har ek nayi subah tumhe nayi umeed de, har ek shaam tumhe sukoon de. Tum jo bhi sapne dekho, unhe poora karne ki taaqat hamesha tumhare saath rahe.</p>
+                <p>Tum jaisi insaan ke liye shabdon mein wishes likhna aasaan nahi hai, kyunki tum khud ek ehsaas ho. Aaj ke din bas yahi kehna hai – duniya ki saari khushiyan tumhari jholi mein ho, tumhara har sapna tumhari aankhon ke samne sach ho jaye, aur tumhara dil hamesha sukoon paaye.</p>
 
-            <p>Kabhi kabhi zindagi mein raaste mushkil ho jaate hain, log badal jaate hain, situations tough ho jaati hain… lekin tum itni strong ho ki tum un sabse nikal jaogi. Tumhari strength aur tumhara dil dono hi bahut hi khoobsurat hain.</p>
+                <p>Main dua karta hoon ki tumhari life hamesha naye rangon se bhari rahe – har ek nayi subah tumhe nayi umeed de, har ek shaam tumhe sukoon de. Tum jo bhi sapne dekho, unhe poora karne ki taaqat hamesha tumhare saath rahe.</p>
 
-            <p>tum un logon mein se ho jo sirf apne hone se hi environment ko positive aur bright bana dete ho. Tumhari presence ek gift hai, aur tum jaisi insaan duniya ke liye ek blessing hai. Ho sakta hai kabhi kabhi tumhe lage ki log tumhe samajhte nahi, ya duniya tumhe underestimate karti hai… lekin sach ye hai ki tum apne andar ek alag hi strength aur glow rakhti ho. 🌟</p>
+                <p>Kabhi kabhi zindagi mein raaste mushkil ho jaate hain, log badal jaate hain, situations tough ho jaati hain… lekin tum itni strong ho ki tum un sabse nikal jaogi. Tumhari strength aur tumhara dil dono hi bahut hi khoobsurat hain.</p>
 
-            <p>Aaj tumhe bas yehi yaad dilana hai ki duniya tumse behtareen insaan aur khoobsurat dil bohot kam dekhti hai. Tum hamesha apne aap par vishwas rakho, kyunki tum apne har sapne ko sach karne ki power rakhti ho. 🌟</p>
+                <p>tum un logon mein se ho jo sirf apne hone se hi environment ko positive aur bright bana dete ho. Tumhari presence ek gift hai, aur tum jaisi insaan duniya ke liye ek blessing hai. Ho sakta hai kabhi kabhi tumhe lage ki log tumhe samajhte nahi, ya duniya tumhe underestimate karti hai… lekin sach ye hai ki tum apne andar ek alag hi strength aur glow rakhti ho. 🌟</p>
 
-            <p>Bas ek baat yaad rakhna – duniya chahe jaisi bhi ho, tum apne liye hamesha special ho, aur tum jaisi insaan duniya ke liye ek gift ho. 🌷
-            <br/>
-            <br/>
-            Main dua karta hoon ki tumhari zindagi hamesha rangon se bhari rahe –<br/>
-            <br/>
-            🌼 Tumhara har din naye sapno se shuru ho.<br/>
-            🌼 Tumhara har pal tumhari muskaan ki tarah bright ho.<br/>
-            🌼 Tumhara dil hamesha sukoon se bhara rahe.<br/>
-            🌼 Tum jo bhi chaho, woh tum tak asaani se aa jaye.<br/>
-            </p>
+                <p>Aaj tumhe bas yehi yaad dilana hai ki duniya tumse behtareen insaan aur khoobsurat dil bohot kam dekhti hai. Tum hamesha apne aap par vishwas rakho, kyunki tum apne har sapne ko sach karne ki power rakhti ho. 🌟</p>
 
-            <p>Tumhari simplicity aur tumhara dil dono hi itne khoobsurat hain ki tumhe jaanne wale log hamesha apne aap ko lucky samajhte hain.Tumhare jaisi insaan kam milte hain – jo apni honesty aur kindness se ek chhoti si duniya ko bhi roshan kar sakte hain.</p>
+                <p>Bas ek baat yaad rakhna – duniya chahe jaisi bhi ho, tum apne liye hamesha special ho, aur tum jaisi insaan duniya ke liye ek gift ho. 🌷
+                <br/>
+                <br/>
+                Main dua karta hoon ki tumhari zindagi hamesha rangon se bhari rahe –<br/>
+                <br/>
+                🌼 Tumhara har din naye sapno se shuru ho.<br/>
+                🌼 Tumhara har pal tumhari muskaan ki tarah bright ho.<br/>
+                🌼 Tumhara dil hamesha sukoon se bhara rahe.<br/>
+                🌼 Tum jo bhi chaho, woh tum tak asaani se aa jaye.<br/>
+                </p>
 
-            <p>So, on this special day, I just want to say – keep believing in yourself, keep smiling, and keep shining. Tumhari journey abhi bahut lambi hai, aur mujhe yakeen hai ki tum apne har sapne ko reality banaogi.</p>
+                <p>Tumhari simplicity aur tumhara dil dono hi itne khoobsurat hain ki tumhe jaanne wale log hamesha apne aap ko lucky samajhte hain.Tumhare jaisi insaan kam milte hain – jo apni honesty aur kindness se ek chhoti si duniya ko bhi roshan kar sakte hain.</p>
 
-            <p>Wishing you a life full of love, laughter, health, peace and success. Tum hamesha apne liye special ho aur hamesha rahogi. 💖</p>
+                <p>So, on this special day, I just want to say – keep believing in yourself, keep smiling, and keep shining. Tumhari journey abhi bahut lambi hai, aur mujhe yakeen hai ki tum apne har sapne ko reality banaogi.</p>
 
-            <p>Once again, Happy Birthday! 🥳 May this year bring you endless happiness, peace, and success. Always keep shining the way you do. 🌟</p>
+                <p>Wishing you a life full of love, laughter, health, peace and success. Tum hamesha apne liye special ho aur hamesha rahogi. 💖</p>
 
-            <p>With lots of love and warm wishes,</p>
-         </div>
-            <p><strong>Subhchintak</strong></p>
-        </div>
-        <div class="nav-buttons animate-fade-in delay-2">
-            <button class="button" onclick="showPage('page6')">Back</button>
-            <button class="button" onclick="showPage('page1')">Back to Home</button>
+                <p>Once again, Happy Birthday! 🥳 May this year bring you endless happiness, peace, and success. Always keep shining the way you do. 🌟</p>
+
+                <p>With lots of love and warm wishes,</p>
+             </div>
+                <p><strong>Subhchintak</strong></p>
+            </div>
+            <div class="nav-buttons animate-fade-in delay-2">
+                <button class="button" onclick="showPage('page6')">Back</button>
+                <button class="button" onclick="showPage('page1')">Back to Home</button>
+            </div>
         </div>
     </div>
 
